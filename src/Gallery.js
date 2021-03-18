@@ -1,7 +1,6 @@
 import React from "react";
 import Title from "./components/Title";
 import styled from "styled-components";
-import { useMediaQuery } from "react-responsive";
 
 import FirstImage from "./assets/galleryImages/1.png";
 import SecondImage from "./assets/galleryImages/2.png";
@@ -76,7 +75,6 @@ const ViewMore = styled.p`
 `;
 
 const Gallery = () => {
-  const isMobile = useMediaQuery({ query: "(max-width:500px)" });
   return (
     <GalleryContainer>
       <Title title="Gallery" />

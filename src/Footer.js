@@ -141,10 +141,10 @@ const Footer = () => {
           </StyledpContainer>
 
           <IconsContainer>
-            <a href="">
+            <a href="https://www.google.com/">
               <StyledFaFacebook />
             </a>
-            <a href="">
+            <a href="https://www.google.com/">
               <StyledFaInstagram />
             </a>
           </IconsContainer>
