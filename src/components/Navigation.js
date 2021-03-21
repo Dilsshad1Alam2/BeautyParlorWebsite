@@ -1,8 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import { scroller } from "react-scroll";
+
+
 
 const NavigationContainer = styled.ul`
-  color: #c41d54;
+  color: #EB7E7E;
   font-size: 18px;
   list-style: none;
   display: flex;
@@ -19,7 +22,7 @@ const NavigationContainer = styled.ul`
       display: block;
       width: 0;
       height:2.5px;
-      background: #c41d54;
+      background: #EB7E7E;
       transition: width 0.3s;
     }
 
@@ -33,13 +36,30 @@ const NavigationContainer = styled.ul`
   }
 `;
 
+const scrollToHome = () =>{
+  scroller.scrollTo('home',{smooth: true, duration :1000})
+}
+
+const scrollToServices = () =>{
+  scroller.scrollTo('services',{smooth: true, duration :1000})
+}
+
+const scrollToGallery = () =>{
+  scroller.scrollTo('gallery',{smooth: true, duration :1000})
+}
+
+const scrollToContact = () =>{
+  scroller.scrollTo('contact',{smooth: true, duration :1000})
+}
+
+
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <li>Home</li>
-      <li>Services</li>
-      <li>Gallery</li>
-      <li>Contact</li>
+      <li onClick = {scrollToHome} >Home</li>
+      <li onClick = {scrollToServices} >Services</li>
+      <li onClick = {scrollToGallery} >Gallery</li>
+      <li onClick = {scrollToContact} >Contact</li>
     </NavigationContainer>
   );
 };

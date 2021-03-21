@@ -8,7 +8,7 @@ import nailpolish from "./assets/servicelogos/nailpolish.svg";
 import skincare from "./assets/servicelogos/skincare.svg";
 import cleansing from "./assets/servicelogos/cleansing.svg";
 import kit from "./assets/servicelogos/kit.svg";
-
+import { Element } from "react-scroll";
 
 //This is the container
 const ServicesContainer = styled.div`
@@ -22,8 +22,6 @@ const ServicesContainer = styled.div`
   align-items: center;
 `;
 
-
-
 const CardContainer = styled.div`
   display: flex;
   justify-content: space-around;
@@ -34,42 +32,44 @@ const CardContainer = styled.div`
 
 const Services = () => {
   return (
-    <ServicesContainer>
-      <Title title="Services We Provide" />
+    <Element name ='services'>
+      <ServicesContainer>
+        <Title title="Services We Provide" />
 
-      <CardContainer>
-        <ServiceCard
-          src={mascara}
-          cardTitle="Mascara"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lacini"
-        />
-        <ServiceCard
-          src={makeup}
-          cardTitle="Makup"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lacini"
-        />
-        <ServiceCard
-          src={nailpolish}
-          cardTitle="Nail Polish"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lacini"
-        />
-        <ServiceCard
-          src={skincare}
-          cardTitle="Skin Care"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lacini"
-        />
-        <ServiceCard
-          src={cleansing}
-          cardTitle="Cleansing"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lacini"
-        />
-        <ServiceCard
-          src={kit}
-          cardTitle="Bridal"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lacini"
-        />
-      </CardContainer>
-    </ServicesContainer>
+        <CardContainer>
+          <ServiceCard
+            src={mascara}
+            cardTitle="Mascara"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lacini"
+          />
+          <ServiceCard
+            src={makeup}
+            cardTitle="Makup"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lacini"
+          />
+          <ServiceCard
+            src={nailpolish}
+            cardTitle="Nail Polish"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lacini"
+          />
+          <ServiceCard
+            src={skincare}
+            cardTitle="Skin Care"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lacini"
+          />
+          <ServiceCard
+            src={cleansing}
+            cardTitle="Cleansing"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lacini"
+          />
+          <ServiceCard
+            src={kit}
+            cardTitle="Bridal"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lacini"
+          />
+        </CardContainer>
+      </ServicesContainer>
+    </Element>
   );
 };
 

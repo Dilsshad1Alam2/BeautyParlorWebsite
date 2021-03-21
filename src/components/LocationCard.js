@@ -21,14 +21,35 @@ const LocationAndInfoContainer = styled.div`
   color: #363636;
   padding: 16px;
 
+  @media screen and (max-width: 1200px) {
+    height: 420px;
+    width: 50%;
+    margin: 10px 0 20px 0;
+  }
+
+
+  @media screen and (max-width: 800px) {
+    height: 420px;
+    width: 60%;
+    margin: 10px 0 20px 0;
+  }
+
   @media screen and (max-width: 500px) {
     height: 420px;
     width: 90%;
-    margin: 10px;
+    margin: 10px 0 20px 0;
   }
 `;
 
 const HorizontoalCenter = styled.div`
+
+@media screen and (max-width: 800px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
+  }
+
   @media screen and (max-width: 500px) {
     display: flex;
     justify-content: center;
@@ -40,6 +61,11 @@ const HorizontoalCenter = styled.div`
 const Title = styled.p`
   font-size: ${({ small }) => (small ? "20px" : "28px")};
   font-weight: 600;
+
+
+  @media screen and (max-width: 800px) {
+    text-align: center;
+  }
 
   @media screen and (max-width: 500px) {
     text-align: center;
@@ -95,24 +121,24 @@ const IconsContainer = styled.div`
 
 const StyledHiLocationMarker = styled(HiLocationMarker)`
   font-size: 27px;
-  color: #c41d54;
+  color: #E03E3E;
   padding: 0;
 `;
 const StyledFaPhoneAlt = styled(FaPhoneAlt)`
   font-size: 21px;
-  color: #c41d54;
+  color: #E03E3E;
 `;
 const StyledMdEmail = styled(MdEmail)`
   font-size: 21px;
-  color: #c41d54;
+  color: #E03E3E;
 `;
 const StyledFaFacebook = styled(FaFacebook)`
   font-size: 22px;
-  color: #c41d54;
+  color: #E03E3E;
 `;
 const StyledFaInstagram = styled(AiFillInstagram)`
   font-size: 25px;
-  color: #c41d54;
+  color: #E03E3E;
 `;
 
 const LocationCard = () => {

@@ -16,29 +16,31 @@ const CardContainer = styled.div`
   background: #fcf8f7;
   border-radius: 10px;
 
+  @media screen and (max-width: 1200px) {
+    height: 350px;
+    width: 350px;
+  }
+
   @media screen and (max-width: 500px) {
     height: 340px;
-  width: 340px;
+    width: 340px;
   }
 `;
 
 const QuoteContainer = styled.div`
-height: 100px;
-display: flex;
-justify-content: center;
-align-items: center;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-@media screen and (max-width: 500px) {
-  height: 80px;
+  @media screen and (max-width: 500px) {
+    height: 80px;
   }
-`
+`;
 
 const StyledQuote = styled(FaQuoteLeft)`
   font-size: 30px;
-  color: #c41d54;
-
-  @media screen and (max-width: 500px) {
-  }
+  color: #e03e3e;
 `;
 
 const Description = styled.p`
@@ -53,6 +55,11 @@ const Description = styled.p`
   justify-content: center;
   align-items: center;
 
+  @media screen and (max-width: 1200px) {
+    font-size: 15px;
+    max-width: 295px;
+  }
+
   @media screen and (max-width: 500px) {
     font-size: 15px;
     max-width: 305px;
@@ -63,9 +70,6 @@ const AuthorName = styled.p`
   font-size: 16px;
   color: #000;
   font-weight: 500;
-
-  @media screen and (max-width: 500px) {
-  }
 `;
 
 const CarouselCard = ({ description, author }) => {

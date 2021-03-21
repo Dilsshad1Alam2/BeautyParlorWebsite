@@ -26,7 +26,7 @@ const TwoCardsContainer = styled.div`
 
 const StyledCarousel = styled(Carousel)`
   .carousel .control-dots .dot {
-    background: #c41d54;
+    background: #E03E3E;
     height: 12px;
     width: 12px;
     box-shadow: 1px 1px 2px rgb(0 0 0 / 90%);
@@ -49,7 +49,7 @@ const TestDiv = styled.div`
 `;
 
 const CarouselPage = () => {
-  const isMobile = useMediaQuery({ query: "(max-width:500px)" });
+  const isMobile = useMediaQuery({ query: "(max-width:500px)"} && {query:"(max-width:800px)"});
   return (
     <>
       {isMobile ? (

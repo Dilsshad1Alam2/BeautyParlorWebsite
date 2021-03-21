@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import Navigation from "./components/Navigation";
-import Logo from "./components/Logo";
 import Button from "./components/Button";
-import { HomePageData } from './data/data'
+import { HomePageData } from "./data/data";
+import { Element,scroller } from "react-scroll";
 
-import BackgroundImg from "./assets/backgroundImg.svg";
-import BackgroundSv2 from "./assets/backgroundsvg3.svg";
+import BgImage from "./assets/bg2.png";
 import Dots from "./assets/dots.svg";
+import FillerShape from "./assets/polygon.svg";
 
 //For Page Background and container
 
@@ -20,19 +20,37 @@ const BackgroundContainer = styled.div`
 
 const HomepageContainer = styled.div`
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
   overflow: auto;
   height: 100%;
+  position: relative;
 `;
 
 //For header Logo and Nav
 
 const HeaderContainer = styled.div`
   display: grid;
-  height: 80px;
+  height: 60px;
   grid-template-columns: 1fr 11fr;
   align-items: center;
   justify-content: center;
+`;
+
+//Logo Text
+
+const Logo = styled.p`
+  font-size: 40px;
+  font-weight: 700;
+  font-family: "Advent Pro", sans-serif;
+  color: #ff7474;
+  text-align: center;
+  padding: 0;
+  margin: 10px 0;
+  line-height: 90%;
+
+  &:hover{
+    cursor: pointer;
+  }
 `;
 
 const NavigationContainer = styled.div`
@@ -42,104 +60,153 @@ const NavigationContainer = styled.div`
 `;
 
 //For BackgroundImage
-
 const BackgroundImage = styled.img`
-  height: 700px;
-  width: auto;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
-`;
-
-const BackgroundSvgContainer = styled.img`
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  top: 75px;
   height: 90vh;
-`;
-
-//COntainer for MainText to center
-
-const MainTextContainer = styled.div`
-  display: grid;
-  align-items: center;
-  height: 600px;
-  width: 100%;
-  grid-template-columns: 1fr 4fr 6fr;
-`;
-
-const MainText = styled.div`
-  max-width: 400px;
+  width: auto;
+  max-width: 100%;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%);
+  z-index: 2;
   overflow: hidden;
-  grid-column: 2;
-  grid-row: 1;
 `;
 
-const MainFont = styled.p`
-  font-size: 70px;
-  font-weight: 900;
-  color: #363636;
-  font-family: "Playfair Display", serif;
-  margin: 0;
-  line-height: 125%;
-  letter-spacing: 3px;
+const MainCircularDiv = styled.div`
+  height: 350px;
+  width: 350px;
+  background: rgba(248, 224, 212, 0.4);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 28%;
+  left: 8%;
+  /* bottom: 400px;
+  left: 200px; */
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
-const SmallFont = styled.p`
+const SecondaryCircularDiv = styled.div`
+  height: 250px;
+  width: 250px;
+  background: rgba(248, 224, 212, 0.4);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 19%;
+  right: 15%;
+  /* bottom: 400px;
+  left: 200px; */
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const DotsContainer = styled.img`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+`;
+
+const FillerContainer = styled.img`
+  position: absolute;
+  top: 0;
+  right: 0;
+`;
+
+const SecondaryButton = styled.button`
+  background: none;
+  border: none;
+  color: #ff8181;
   font-size: 18px;
-  font-weight: 300;
-  color: #363636;
-  font-family: "Montserrat", serif;
-  margin: 0;
-  padding: 18px 0;
-  letter-spacing: 0.5px;
+  font-weight: 600;
+  padding-bottom: 1px;
+  border-bottom: 1px solid #ff8181;
 `;
 
-//For Button Container
+const MainTitle = styled.p`
+  color: #ff8181;
+  font-size: 35px;
+  font-weight: 700;
+  opacity: 100%;
+  max-width: 135px;
+  margin: 0;
+  text-align: center;
+`;
+
+const Description = styled.p`
+  color: #ff8181;
+  opacity: 75%;
+  font-size: 16px;
+  max-width: 300px;
+  text-align: center;
+`;
+
+const SecondaryDescription = styled.div`
+  color: #ff8181;
+  font-size: 16px;
+  max-width: 178px;
+  text-align: center;
+  margin: 20px 0;
+`;
 
 const ButtonContainer = styled.div`
   display: flex;
-  gap: 20px;
+  justify-content: center;
+  align-items: center;
 `;
 
 //For Empty Filler (Dots)
 
-const DotsImage = styled.img`
-  position: absolute;
-  bottom: 0;
-`;
+const scrollToContact = () =>{
+  scroller.scrollTo('contact',{smooth: true, duration :1000})
+}
+
+
+const scrollToHome = () =>{
+  scroller.scrollTo('home',{smooth: true, duration :1000})
+}
 
 const Homepage = () => {
-
-
   return (
-    <BackgroundContainer>
-      <HomepageContainer>
-        <HeaderContainer>
-          <Logo />
-          <NavigationContainer>
-            <Navigation />
-          </NavigationContainer>
-        </HeaderContainer>
-        <BackgroundImage src={BackgroundImg} alt="Not Loaded" />
-        <BackgroundSvgContainer src={BackgroundSv2} alt="Not Loaded" />
+    <Element name = 'home'>
+      <BackgroundContainer>
+        <HomepageContainer>
+          <HeaderContainer>
+            <Logo onClick = {scrollToHome} >Nuri Beauty</Logo>
+            <NavigationContainer>
+              <Navigation />
+            </NavigationContainer>
+          </HeaderContainer>
 
-        <MainTextContainer>
-          <MainText>
-            <MainFont>{HomePageData.mainFont}</MainFont>
-            <SmallFont>{HomePageData.smallFont}</SmallFont>
+          <BackgroundImage src={BgImage} alt="Not Loaded" />
+
+          <MainCircularDiv>
+            <MainTitle>{HomePageData.mainFont}</MainTitle>
+            <Description>{HomePageData.smallFont}</Description>
             <ButtonContainer>
-              <Button ButtonContent="Call Now" />
-              <Button ButtonContent="Services" />
+              <Button onClick = {scrollToContact}>Enquire Now</Button>
             </ButtonContainer>
-          </MainText>
-        </MainTextContainer>
+          </MainCircularDiv>
 
-        <DotsImage src={Dots} alt="Not Loaded" />
-      </HomepageContainer>
-    </BackgroundContainer>
+          <SecondaryCircularDiv>
+            <SecondaryDescription>
+              {HomePageData.secondaryDescription}
+            </SecondaryDescription>
+            <ButtonContainer>
+              <SecondaryButton>View Services</SecondaryButton>
+            </ButtonContainer>
+          </SecondaryCircularDiv>
+
+          <DotsContainer src={Dots} />
+        </HomepageContainer>
+        <FillerContainer src={FillerShape} />
+      </BackgroundContainer>
+    </Element>
   );
 };
 

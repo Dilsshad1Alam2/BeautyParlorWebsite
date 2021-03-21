@@ -1,6 +1,7 @@
 import React from "react";
 import Title from "./components/Title";
 import styled from "styled-components";
+import { Element } from "react-scroll";
 
 import FirstImage from "./assets/galleryImages/1.png";
 import SecondImage from "./assets/galleryImages/2.png";
@@ -31,6 +32,14 @@ const GalleryImagesContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 1200px) {
+    margin: 0px 15px 15px 15px;
+  }
+
+  @media screen and (max-width: 800px) {
+    margin: 0px 15px 15px 15px;
+  }
 
   @media screen and (max-width: 500px) {
     margin: 0px 15px 15px 15px;
@@ -76,50 +85,52 @@ const ViewMore = styled.p`
 
 const Gallery = () => {
   return (
-    <GalleryContainer>
-      <Title title="Gallery" />
+    <Element name = 'gallery'>
+      <GalleryContainer>
+        <Title title="Gallery" />
 
-      <PhotosDivContainer>
-        <GalleryImagesContainer>
-          <GalleryImages src={FirstImage} alt="" />
-        </GalleryImagesContainer>
+        <PhotosDivContainer>
+          <GalleryImagesContainer>
+            <GalleryImages src={FirstImage} alt="" />
+          </GalleryImagesContainer>
 
-        <GalleryImagesContainer>
-          <GalleryImages src={SecondImage} alt="" />
-        </GalleryImagesContainer>
+          <GalleryImagesContainer>
+            <GalleryImages src={SecondImage} alt="" />
+          </GalleryImagesContainer>
 
-        <GalleryImagesContainer>
-          <GalleryImages src={ThirdImage} alt="" />
-        </GalleryImagesContainer>
+          <GalleryImagesContainer>
+            <GalleryImages src={ThirdImage} alt="" />
+          </GalleryImagesContainer>
 
-        <GalleryImagesContainer>
-          <GalleryImages src={FourthImage} alt="" />
-        </GalleryImagesContainer>
+          <GalleryImagesContainer>
+            <GalleryImages src={FourthImage} alt="" />
+          </GalleryImagesContainer>
 
-        <GalleryImagesContainer>
-          <GalleryImages src={FifthImage} alt="" />
-        </GalleryImagesContainer>
+          <GalleryImagesContainer>
+            <GalleryImages src={FifthImage} alt="" />
+          </GalleryImagesContainer>
 
-        <GalleryImagesContainer>
-          <GalleryImages src={SixthImage} alt="" />
-        </GalleryImagesContainer>
+          <GalleryImagesContainer>
+            <GalleryImages src={SixthImage} alt="" />
+          </GalleryImagesContainer>
 
-        <GalleryImagesContainer>
-          <GalleryImages src={FirstImage} alt="" />
-        </GalleryImagesContainer>
+          <GalleryImagesContainer>
+            <GalleryImages src={FirstImage} alt="" />
+          </GalleryImagesContainer>
 
-        <GalleryImagesContainer>
-          <GalleryImages src={SecondImage} alt="" />
-        </GalleryImagesContainer>
+          <GalleryImagesContainer>
+            <GalleryImages src={SecondImage} alt="" />
+          </GalleryImagesContainer>
 
-        <GalleryImagesContainer>
-          <GalleryImages src={ThirdImage} alt="" />
-        </GalleryImagesContainer>
-      </PhotosDivContainer>
-      <VieMoreContainer>
-        <ViewMore>View More Images</ViewMore>
-      </VieMoreContainer>
-    </GalleryContainer>
+          <GalleryImagesContainer>
+            <GalleryImages src={ThirdImage} alt="" />
+          </GalleryImagesContainer>
+        </PhotosDivContainer>
+        <VieMoreContainer>
+          <ViewMore>View More Images</ViewMore>
+        </VieMoreContainer>
+      </GalleryContainer>
+    </Element>
   );
 };
 

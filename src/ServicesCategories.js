@@ -26,7 +26,7 @@ const ServiceCategoriesNavBarContainer = styled.div`
   display: flex;
   align-items: center;
   height: 70px;
-  background: #c41d54;
+  background: #E03E3E;
   width: 900px;
   margin: auto;
   justify-content: space-around;
@@ -42,13 +42,14 @@ const ServiceCategoriesNavBarContainer = styled.div`
   &::after {
     content: "";
     display: block;
-    background: #c41d54;
+    background: #E03E3E;
     height: 70px;
   }
 
-  @media screen and (max-width: 500px) {
-    width: 95%;
-    height: 55px;
+
+  @media screen and (max-width: 1200px) {
+    width: 85%;
+    height: px;
 
     &::before {
       content: "";
@@ -60,8 +61,45 @@ const ServiceCategoriesNavBarContainer = styled.div`
     &::after {
       content: "";
       display: block;
-      background: #c41d54;
+      background: #E03E3E;
       height: 70px;
+    }
+  }
+
+  
+  @media screen and (max-width: 800px) {
+    width: 95%;
+    height: px;
+
+    &::before {
+      content: "";
+      display: block;
+      background: #fff;
+      height: 70px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      background: #E03E3E;
+      height: 70px;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 95%;
+    height: 55px;
+
+    &::before {
+      content: "";
+      display: block;
+      background: #E03E3E;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      background: #E03E3E;
     }
   }
 `;
@@ -73,19 +111,19 @@ const NavVerticalLine = styled.div`
 `;
 
 const mobileActiveStyle = {
-  borderTop: "5px solid #0B2755",
+  borderTop: "6px solid #0B2755",
 };
 
 const activestyle = {
-  borderTop: "5px solid #0B2755",
+  borderTop: "6px solid #0B2755",
 };
 
 const notactivestyle = {};
 
 const StyledNavLink = styled(NavLink)`
   padding: 20px;
-  border-top: 6px solid #c41d54;
-  border-radius: 4px;
+  border-top: 6px solid #E03E3E;
+  border-radius: 3px;
   text-decoration: none;
   color: #fff;
   font-size: 18px;

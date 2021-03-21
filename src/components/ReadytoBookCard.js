@@ -17,11 +17,27 @@ const ReadytoBookCardContainer = styled.div`
   margin-right: 50px;
   margin-bottom: 100px;
 
+
+  @media screen and (max-width: 1200px) {
+    height: 470px;
+    width: 60%;
+    margin: 10px;
+    margin-bottom: 10px;
+  }
+
+
+  @media screen and (max-width: 800px) {
+    height: 400px;
+    width: 70%;
+    margin: 10px;
+    margin-bottom: 10px;
+  }
+
   @media screen and (max-width: 500px) {
     height: 400px;
     width: 95%;
     margin: 10px;
-    margin-bottom:10px;
+    margin-bottom: 10px;
   }
 `;
 
@@ -30,19 +46,40 @@ const ReadytoBookText = styled.div`
   font-size: 50px;
   font-weight: 700;
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 1200px) {
     font-size: 35px;
-  font-weight: 700;
+    font-weight: 700;
+  }
+
+
+  @media screen and (max-width: 800px) {
+    font-size: 35px;
+    font-weight: 700;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 30px;
+    font-weight: 700;
   }
 `;
 
+const ReadytoBookSubText = styled.p`
+  font-family: "montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+`
+
 const NumberContainer = styled.div`
-  margin-top: 100px;
+  margin-top: 50px;
   line-height: 400%;
 
+  @media screen and (max-width: 800px) {
+    margin-top: 35px;
+  }
+
   @media screen and (max-width: 500px) {
-margin-top:35px;
-  }  
+    margin-top: 35px;
+  }
 `;
 
 const StyledP = styled.p`
@@ -52,32 +89,43 @@ const StyledP = styled.p`
   margin: 0;
   text-align: center;
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 800px) {
     font-size: 35px;
-  font-weight: 500;
-  } 
+    font-weight: 500;
+  }
 
+  @media screen and (max-width: 500px) {
+    font-size: 30px;
+    font-weight: 500;
+  }
 `;
 
 const StyledPColor = styled.p`
   font-family: "montserrat", sans-serif;
   font-size: 40px;
   font-weight: 600;
-  color: #c41d54;
+  color: #e03e3e;
   margin: 0;
   text-align: center;
 
-  @media screen and (max-width: 500px) {
-    font-size: 30px;;
-  } 
+  @media screen and (max-width: 1200px) {
+    font-size: 30px;
+  }
 
+  @media screen and (max-width: 800px) {
+    font-size: 30px;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 30px;
+  }
 `;
 
 const ReadytoBookCard = () => {
   return (
     <ReadytoBookCardContainer>
       <ReadytoBookText>READY TO BOOK ?</ReadytoBookText>
-
+      <ReadytoBookSubText>Or have a question in mind?</ReadytoBookSubText>
       <NumberContainer>
         <StyledP>Give us a call:</StyledP>
         <StyledPColor>+977 9803675401</StyledPColor>

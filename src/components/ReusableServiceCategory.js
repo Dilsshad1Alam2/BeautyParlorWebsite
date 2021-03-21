@@ -10,6 +10,11 @@ const ReusableServiceCategoryContainer = styled.div`
 
 const BeforeAfterDiv = styled.div`
 
+@media screen and (max-width: 800px) {
+  background: #fcf2f0;
+  margin-bottom: 50px;
+  }
+
 @media screen and (max-width: 500px) {
   background: #fcf2f0;
   margin-bottom: 50px;
@@ -25,6 +30,18 @@ const ImageDiv = styled.div`
   align-items: center;
   justify-content: center;
   margin: 10px 10px 100px 10px;
+
+  @media screen and (max-width: 1200px) {
+  width: 400px;
+  height: 400px;
+  margin:10px;
+  }
+
+  @media screen and (max-width: 800px) {
+  width: 360px;
+  height: 360px;
+  margin:10px;
+  }
 
   @media screen and (max-width: 500px) {
   width: 360px;

@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ReadytoBookCard from "./components/ReadytoBookCard";
 import LocationCard from "./components/LocationCard";
+import { Element } from "react-scroll";
 
 const ContactContainer = styled.div``;
 
@@ -15,6 +16,18 @@ const BookingSection = styled.div`
   display: grid;
   grid-template-columns: 6fr 4fr;
   grid-template-rows: 1fr;
+
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 6fr 4fr;
+    padding: 0;
+  }
+
+  @media screen and (max-width: 800px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 6fr 4fr;
+    padding: 0;
+  }
 
   @media screen and (max-width: 500px) {
     grid-template-columns: 1fr;
@@ -30,6 +43,16 @@ const GridContainer1 = styled.div`
   justify-content: flex-end;
   align-items: center;
 
+  @media screen and (max-width: 1200px) {
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 800px) {
+    justify-content: center;
+    align-items: center;
+  }
+
   @media screen and (max-width: 500px) {
     justify-content: center;
     align-items: center;
@@ -40,6 +63,14 @@ const GridContainer2 = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
+
+  @media screen and (max-width: 1200px) {
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 800px) {
+    justify-content: center;
+  }
 
   @media screen and (max-width: 500px) {
     justify-content: center;
@@ -60,15 +91,17 @@ const Contact = () => {
         ></iframe>
       </MapContainerFullWidth>
 
-      <BookingSection>
-        <GridContainer1>
-          <ReadytoBookCard />
-        </GridContainer1>
+      <Element name="contact">
+        <BookingSection>
+          <GridContainer1>
+            <ReadytoBookCard />
+          </GridContainer1>
 
-        <GridContainer2>
-          <LocationCard />
-        </GridContainer2>
-      </BookingSection>
+          <GridContainer2>
+            <LocationCard />
+          </GridContainer2>
+        </BookingSection>
+      </Element>
     </ContactContainer>
   );
 };

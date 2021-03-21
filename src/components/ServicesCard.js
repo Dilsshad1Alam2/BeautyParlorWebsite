@@ -12,7 +12,7 @@ const ServiceCardContainer = styled.div`
 const FancyDiv = styled.div`
   width: 40px;
   height: 3px;
-  background: #c41d54;
+  background: #FF7474;
 `;
 
 const ServiceTitle = styled.p`
